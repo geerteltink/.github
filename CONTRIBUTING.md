@@ -13,7 +13,7 @@ patches and features.
 ## Code of Conduct
 
 Help us keep this community open and inclusive. Please read and follow our
-[Code of Conduct](https://github.com/xtreamwayz/.github/blob/master/CODE_OF_CONDUCT.md).
+[Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Using the issue tracker
 
@@ -82,7 +82,7 @@ included in the project:
    # Navigate to the newly cloned directory
    cd <project>
    # Assign the original repo to a remote called "upstream"
-   git remote add upstream https://github.com/geerteltink/<project>.git
+   git remote add upstream https://github.com/<original-organization>/<original-project>.git
    ```
 
 2. Get the latest changes from upstream:
