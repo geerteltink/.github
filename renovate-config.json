@@ -1,0 +1,62 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "description": "Default configuration for repositories in the Genetic Consolidated organisation",
+    "extends": [
+      "config:base",
+      ":semanticCommits",
+      ":timezone(UTC)",
+      ":disableRateLimiting",
+      ":ignoreModulesAndTests",
+      ":automergeDisabled",
+      ":automergeBranch",
+      ":prNotPending",
+      ":rebaseStalePrs",
+      ":separateMajorReleases",
+      ":combinePatchMinorReleases",
+      ":timezone(UTC)",
+      "group:allNonMajor",
+      "group:recommended"
+    ],
+    "labels": [
+      "dependencies"
+    ],
+    "platformAutomerge": true,
+    "rollbackPrs": true,
+    "rangeStrategy": "bump",
+    "packageRules": [
+      {
+        "matchUpdateTypes": [
+          "minor",
+          "patch"
+        ],
+        "automerge": true
+      },
+      {
+        "matchDepTypes": [
+          "devDependencies"
+        ],
+        "rangeStrategy": "pin"
+      },
+      {
+        "matchPackagePatterns": [
+          "^laminas/"
+        ],
+        "groupSlug": "laminas",
+        "groupName": "Laminas packages"
+      },
+      {
+        "matchPackagePatterns": [
+          "^mezzio/"
+        ],
+        "groupSlug": "mezzio",
+        "groupName": "Mezzio packages"
+      },
+      {
+        "matchPackagePatterns": [
+          "^symfony/"
+        ],
+        "groupSlug": "symfony",
+        "groupName": "symfony packages"
+      }
+    ]
+  }
