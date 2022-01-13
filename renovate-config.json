@@ -3,8 +3,6 @@
   "description": "Default configuration for repositories in the Genetic Consolidated organisation",
   "extends": [
     "config:base",
-    "group:allNonMajor",
-    "group:recommended",
     ":semanticCommits",
     ":timezone(UTC)",
     ":disableRateLimiting",
@@ -14,25 +12,29 @@
     ":prNotPending",
     ":rebaseStalePrs",
     ":separateMajorReleases",
-    ":combinePatchMinorReleases"
+    ":combinePatchMinorReleases",
+    ":timezone(UTC)",
+    "group:allNonMajor",
+    "group:recommended"
   ],
   "labels": [
     "dependencies"
   ],
   "platformAutomerge": true,
-  "rollbackPrs": true,
   "rangeStrategy": "bump",
+  "enabledManagers": [ "npm", "composer", "github-actions" ],
   "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": [
+        "patch", "minor"
+      ],
+      "enabled": false
+    },
     {
       "matchUpdateTypes": [
         "minor",
         "patch"
-      ],
-      "automerge": true
-    },
-    {
-      "matchDepTypes": [
-        "devDependencies"
       ],
       "automerge": true
     },
