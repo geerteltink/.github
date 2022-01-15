@@ -2,10 +2,8 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "description": "Default configuration for repositories in the Genetic Consolidated organisation",
   "extends": [
-    "config:base",
+    ":enableRenovate",
     ":semanticCommits",
-    ":timezone(UTC)",
-    ":disableRateLimiting",
     ":ignoreModulesAndTests",
     ":automergeDisabled",
     ":automergeBranch",
@@ -13,26 +11,26 @@
     ":rebaseStalePrs",
     ":separateMajorReleases",
     ":combinePatchMinorReleases",
+    ":enableVulnerabilityAlerts",
     ":timezone(UTC)",
+    ":label(dependencies)",
     "group:allNonMajor",
-    "group:recommended"
+    "schedule:daily"
   ],
-  "labels": [
-    "dependencies"
-  ],
-  "platformAutomerge": true,
   "enabledManagers": [
     "npm",
     "composer",
     "github-actions"
   ],
-  "rangeStrategy": "bump",
   "lockFileMaintenance": {
     "enabled": true,
     "extends": [
       ":automergeAll"
     ]
   },
+  "platformAutomerge": true,
+  "rangeStrategy": "bump",
+  "rollbackPrs": true,
   "packageRules": [
     {
       "matchManagers": [
@@ -50,27 +48,6 @@
         "patch"
       ],
       "automerge": true
-    },
-    {
-      "matchPackagePatterns": [
-        "^laminas/"
-      ],
-      "groupSlug": "laminas",
-      "groupName": "Laminas packages"
-    },
-    {
-      "matchPackagePatterns": [
-        "^mezzio/"
-      ],
-      "groupSlug": "mezzio",
-      "groupName": "Mezzio packages"
-    },
-    {
-      "matchPackagePatterns": [
-        "^symfony/"
-      ],
-      "groupSlug": "symfony",
-      "groupName": "symfony packages"
     }
   ]
 }
