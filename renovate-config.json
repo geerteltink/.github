@@ -4,17 +4,18 @@
   "extends": [
     "config:base",
     "group:allNonMajor",
+    "schedule:weekly",
     ":automergeMinor",
     ":automergePr",
     ":automergeBranch",
     ":combinePatchMinorReleases",
-    ":enableVulnerabilityAlertsWithLabel(security)",
-    ":label(dependencies)",
-    ":gitSignOff",
     ":disableDependencyDashboard",
+    ":enableVulnerabilityAlertsWithLabel(security)",   
+    ":gitSignOff",
+    ":label(dependencies)",
+    ":maintainLockFilesWeekly",
     ":prNotPending",
     ":rebaseStalePrs",
-    ":schedule:weekly",
     ":semanticCommits",
     ":separateMajorReleases",
     ":timezone(Europe/Amsterdam)"
@@ -26,12 +27,6 @@
     "github-actions",
     "npm"
   ],
-  "lockFileMaintenance": {
-    "enabled": true,
-    "extends": [
-      "schedule:weekly"
-    ]
-  },
   "commitBodyTable": true,
   "rangeStrategy": "bump",
   "rollbackPrs": true,
