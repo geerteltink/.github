@@ -5,13 +5,14 @@
     "config:base",
     "group:allNonMajor",
     "schedule:weekly",
+    ":automergeBranch",
     ":automergeMinor",
     ":automergePr",
-    ":automergeBranch",
     ":combinePatchMinorReleases",
     ":disableDependencyDashboard",
-    ":enableVulnerabilityAlertsWithLabel(security)",   
+    ":enableVulnerabilityAlertsWithLabel(security)",
     ":gitSignOff",
+    ":ignoreModulesAndTests",
     ":label(dependencies)",
     ":maintainLockFilesWeekly",
     ":prNotPending",
@@ -28,6 +29,10 @@
     "npm"
   ],
   "commitBodyTable": true,
+  "lockFileMaintenance": {
+    "enabled": true,
+    "extends": ["schedule:daily"]
+  },
   "rangeStrategy": "bump",
   "rollbackPrs": true,
   "platformAutomerge": true,
@@ -42,5 +47,8 @@
       ],
       "enabled": false
     }
-  ]
+  ],
+  "vulnerabilityAlerts": {
+    "rangeStrategy": "bump"
+  }
 }
