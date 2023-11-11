@@ -33,6 +33,7 @@
     "extends": ["schedule:daily"]
   },
   "rangeStrategy": "bump",
+  "bumpVersion": "patch",
   "rollbackPrs": true,
   "platformAutomerge": true,
   "packageRules": [
