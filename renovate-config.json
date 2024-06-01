@@ -2,10 +2,9 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "description": "Default renovate configuration",
     "extends": [
-        "config:base",
+        "config:recommended",
         "group:allNonMajor",
         "schedule:weekly",
-        ":automergeBranch",
         ":automergeMinor",
         ":automergePr",
         ":combinePatchMinorReleases",
