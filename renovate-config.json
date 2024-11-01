@@ -1,57 +1,55 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "description": "Default renovate configuration",
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Default renovate configuration",
+  "extends": [
+    "config:recommended",
+    "group:allNonMajor",
+    ":dependencyDashboard",
+    ":ignoreModulesAndTests",
+    ":automergeMinor",
+    ":automergeBranch",
+    ":automergePr",
+    ":rebaseStalePrs",
+    ":semanticCommits",
+    ":separateMajorReleases",
+    ":combinePatchMinorReleases",
+    ":enableVulnerabilityAlertsWithLabel(security)",
+    ":timezone(Europe/Amsterdam)",
+    ":gitSignOff",
+    ":label(dependencies)"
+  ],
+  "enabledManagers": [
+    "composer",
+    "docker-compose",
+    "dockerfile",
+    "github-actions",
+    "npm",
+    "cargo"
+  ],
+  "commitBodyTable": true,
+  "lockFileMaintenance": {
+    "enabled": true,
     "extends": [
-        "config:recommended",
-        "group:allNonMajor",
-        "schedule:weekly",
-        ":automergeMinor",
-        ":automergePr",
-        ":combinePatchMinorReleases",
-        ":disableDependencyDashboard",
-        ":enableVulnerabilityAlertsWithLabel(security)",
-        ":gitSignOff",
-        ":ignoreModulesAndTests",
-        ":label(dependencies)",
-        ":prNotPending",
-        ":rebaseStalePrs",
-        ":semanticCommits",
-        ":separateMajorReleases",
-        ":timezone(Europe/Amsterdam)"
-    ],
-    "enabledManagers": [
-        "composer",
-        "docker-compose",
-        "dockerfile",
-        "github-actions",
-        "bun",
-        "npm",
-        "cargo"
-    ],
-    "commitBodyTable": true,
-    "lockFileMaintenance": {
-        "enabled": true,
-        "extends": [
-            "schedule:daily"
-        ]
-    },
-    "rangeStrategy": "bump",
-    "bumpVersion": "patch",
-    "rollbackPrs": true,
-    "platformAutomerge": true,
-    "packageRules": [
-        {
-            "matchManagers": [
-                "github-actions"
-            ],
-            "matchUpdateTypes": [
-                "patch",
-                "minor"
-            ],
-            "enabled": false
-        }
-    ],
-    "vulnerabilityAlerts": {
-        "rangeStrategy": "bump"
+      "schedule:weekly"
+    ]
+  },
+  "rangeStrategy": "bump",
+  "bumpVersion": "patch",
+  "rollbackPrs": true,
+  "platformAutomerge": true,
+  "packageRules": [
+    {
+      "matchManagers": [
+        "github-actions"
+      ],
+      "matchUpdateTypes": [
+        "patch",
+        "minor"
+      ],
+      "enabled": false
     }
+  ],
+  "vulnerabilityAlerts": {
+    "rangeStrategy": "bump"
+  }
 }
