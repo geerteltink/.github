@@ -25,7 +25,9 @@
         "dockerfile",
         "github-actions",
         "npm",
-        "cargo"
+        "cargo",
+        "maven",
+        "gradle"
     ],
     "commitBodyTable": true,
     "lockFileMaintenance": {
