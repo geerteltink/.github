@@ -4,7 +4,7 @@
     "extends": [
         "config:recommended",
         "group:allNonMajor",
-        "schedule:weekly",
+        "schedule:weekends",
         ":automergeMinor",
         ":automergePr",
         ":combinePatchMinorReleases",
