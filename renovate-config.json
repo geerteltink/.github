@@ -36,6 +36,7 @@
             "schedule:weekly"
         ]
     },
+    "minimumReleaseAge": "3 days"
     "rangeStrategy": "bump",
     "bumpVersion": "patch",
     "rollbackPrs": true,
