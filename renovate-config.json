@@ -50,6 +50,10 @@
                 "minor"
             ],
             "enabled": false
+        },
+        {
+            "matchPackageNames": ["typescript"],
+            "allowedVersions": "<7"
         }
     ],
     "vulnerabilityAlerts": {
