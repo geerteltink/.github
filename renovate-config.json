@@ -41,13 +41,43 @@
   "platformAutomerge": true,
   "packageRules": [
     {
+      "matchPackageNames": ["typescript"],
+      "allowedVersions": "<7"
+    },
+    {
+      "description": "Group all JavaScript / Node updates together",
+      "matchManagers": ["npm"],
+      "groupName": "JavaScript dependencies",
+      "groupSlug": "js-deps"
+    },
+    {
+      "description": "Group all Rust / Cargo updates together",
+      "matchManagers": ["cargo"],
+      "groupName": "Rust dependencies",
+      "groupSlug": "rust-deps"
+    },
+    {
+      "description": "Group all Java / Maven / Gradle updates together",
+      "matchManagers": ["maven", "gradle"],
+      "groupName": "Java dependencies",
+      "groupSlug": "java-deps"
+    },
+    {
+      "description": "Group all PHP / Composer updates together",
+      "matchManagers": ["composer"],
+      "groupName": "PHP dependencies",
+      "groupSlug": "php-deps"
+    },
+    {
+      "description": "Group all GitHub Actions workflow updates together",
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions",
+      "groupSlug": "github-actions-deps"
+    },
+    {
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["patch", "minor"],
       "enabled": false
-    },
-    {
-      "matchPackageNames": ["typescript"],
-      "allowedVersions": "<7"
     }
   ],
   "vulnerabilityAlerts": {
